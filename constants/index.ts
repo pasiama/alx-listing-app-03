@@ -14,7 +14,7 @@ export const BUTTON_TEXTS = {
     export const PAGE_TITLES = {
       HOME: 'Welcome to ALX Listing App',
       PROPERTY_DETAILS: 'Property Details',
-    };
+    }; 
     
     export const PROPERTYLISTINGSAMPLE: PropertyProps []  =  [
       {
