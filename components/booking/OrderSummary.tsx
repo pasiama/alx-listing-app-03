@@ -7,9 +7,11 @@ const OrderSummary: React.FC<{ bookingDetails }> = ({ bookingDetails }) => {
 
     const handlePayment = async () => {
         setLoading(true);
-        const callbackUrl = `${window.location.origin}/payment-status`; // Redirect URL after payment
+        const callbackUrl = `http://localhost:3000/booking?name=Villa%20Ocean%20Breeze/payment-status`; // Redirect URL after payment
 
-        const paymentResponse = await initializePayment(bookingDetails, callbackUrl);
+        const paymentResponse = await initializePayment(bookingDetails);
+console.log("book details",bookingDetails)
+console.log("paymentResponse",paymentResponse)
 
         if (paymentResponse && paymentResponse.status === "success") {
             window.location.href = paymentResponse.data.checkout_url; // Redirect to Chapa payment page
